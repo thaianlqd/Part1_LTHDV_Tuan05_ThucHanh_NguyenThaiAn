@@ -1,0 +1,15 @@
+<%- include("../partials/header") %>
+<h2>Danh sách Nhà cung cấp</h2>
+<a href="/suppliers/new">Thêm mới</a>
+<ul>
+  <% suppliers.forEach(s => { %>
+    <li>
+      <%= s.name %> - <%= s.phone %>
+      <a href="/suppliers/<%= s._id %>/edit">Sửa</a>
+      <form action="/suppliers/<%= s._id %>?_method=DELETE" method="POST" style="display:inline;">
+        <button type="submit">Xóa</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+<%- include("../partials/footer") %>

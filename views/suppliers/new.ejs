@@ -1,0 +1,9 @@
+<%- include("../partials/header") %>
+<h2>Thêm Nhà cung cấp</h2>
+<form action="/suppliers" method="POST">
+  <input type="text" name="name" placeholder="Tên" required>
+  <input type="text" name="address" placeholder="Địa chỉ">
+  <input type="text" name="phone" placeholder="SĐT">
+  <button type="submit">Thêm</button>
+</form>
+<%- include("../partials/footer") %>
