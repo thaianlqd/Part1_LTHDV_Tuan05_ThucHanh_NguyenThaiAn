@@ -1,80 +1,39 @@
 <%- include("../partials/header") %>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
+<div class="container my-4">
+  <div class="card mx-auto" style="max-width: 400px;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4 text-dark">Thêm Sản phẩm</h2>
+      <form action="/products" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Tên sản phẩm" required>
+        </div>
 
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+        <div class="mb-3">
+          <label for="price" class="form-label">Giá</label>
+          <input type="number" step="0.01" class="form-control" id="price" name="price" placeholder="Giá">
+        </div>
 
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: #f9f9f9;
-  }
+        <div class="mb-3">
+          <label for="quantity" class="form-label">Số lượng</label>
+          <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Số lượng">
+        </div>
 
-  label {
-    font-weight: bold;
-    margin-bottom: 4px;
-  }
+        <div class="mb-3">
+          <label for="supplier" class="form-label">Nhà cung cấp</label>
+          <select id="supplier" name="supplier" class="form-select">
+            <option value="">-- Chọn nhà cung cấp --</option>
+            <% suppliers.forEach(s => { %>
+              <option value="<%= s._id %>"><%= s.name %></option>
+            <% }) %>
+          </select>
+        </div>
 
-  input, select, button {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  button {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    color: #555;
-  }
-</style>
-
-<h2>Thêm Sản phẩm</h2>
-<form action="/products" method="POST">
-  <label for="name">Tên</label>
-  <input type="text" id="name" name="name" placeholder="Tên sản phẩm" required>
-
-  <label for="price">Giá</label>
-  <input type="number" step="0.01" id="price" name="price" placeholder="Giá">
-
-  <label for="quantity">Số lượng</label>
-  <input type="number" id="quantity" name="quantity" placeholder="Số lượng">
-
-  <label for="supplier">Nhà cung cấp</label>
-  <select id="supplier" name="supplier">
-    <option value="">-- Chọn nhà cung cấp --</option>
-    <% suppliers.forEach(s => { %>
-      <option value="<%= s._id %>"><%= s.name %></option>
-    <% }) %>
-  </select>
-
-  <button type="submit">Thêm</button>
-</form>
+        <button type="submit" class="btn btn-primary w-100 mt-3">Thêm</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <%- include("../partials/footer") %>

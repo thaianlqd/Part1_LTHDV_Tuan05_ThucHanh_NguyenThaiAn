@@ -1,61 +1,29 @@
 <%- include("../partials/header") %>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-  }
+<div class="container my-4">
+  <div class="card mx-auto" style="max-width: 400px;">
+    <div class="card-body">
+      <h2 class="card-title text-center mb-4 text-dark">Sửa Nhà cung cấp</h2>
+      <form action="/suppliers/<%= supplier._id %>?_method=PUT" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Tên nhà cung cấp</label>
+          <input type="text" class="form-control" id="name" name="name" value="<%= supplier.name %>" placeholder="Tên nhà cung cấp" required>
+        </div>
 
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
+        <div class="mb-3">
+          <label for="address" class="form-label">Địa chỉ</label>
+          <input type="text" class="form-control" id="address" name="address" value="<%= supplier.address %>" placeholder="Địa chỉ">
+        </div>
 
-  form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background: #f9f9f9;
-  }
+        <div class="mb-3">
+          <label for="phone" class="form-label">Số điện thoại</label>
+          <input type="text" class="form-control" id="phone" name="phone" value="<%= supplier.phone %>" placeholder="Số điện thoại">
+        </div>
 
-  input, button {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
-  button {
-    background-color: #28a745;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background-color: #1e7e34;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    color: #555;
-  }
-</style>
-
-<h2>Sửa Nhà cung cấp</h2>
-<form action="/suppliers/<%= supplier._id %>?_method=PUT" method="POST">
-  <input type="text" name="name" value="<%= supplier.name %>" placeholder="Tên nhà cung cấp" required>
-  <input type="text" name="address" value="<%= supplier.address %>" placeholder="Địa chỉ">
-  <input type="text" name="phone" value="<%= supplier.phone %>" placeholder="Số điện thoại">
-  <button type="submit">Cập nhật</button>
-</form>
+        <button type="submit" class="btn btn-success w-100 mt-3">Cập nhật</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <%- include("../partials/footer") %>

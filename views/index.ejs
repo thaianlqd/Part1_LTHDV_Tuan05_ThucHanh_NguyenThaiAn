@@ -1,60 +1,12 @@
 <%- include("partials/header") %>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background: #f8f9fa;
-  }
+<div class="container my-5 text-center">
+  <h1 class="mb-5 text-dark">Trang chủ</h1>
 
-  h1 {
-    text-align: center;
-    color: #343a40;
-    margin-bottom: 30px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  ul li {
-    margin: 15px 0;
-  }
-
-  ul li a {
-    display: block;
-    text-align: center;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-
-  ul li a:hover {
-    background-color: #0056b3;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    padding: 15px 0;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    color: #555;
-  }
-</style>
-
-<h1>Trang chủ</h1>
-<ul>
-  <li><a href="/suppliers">Quản lý Nhà cung cấp</a></li>
-  <li><a href="/products">Quản lý Sản phẩm</a></li>
-</ul>
+  <div class="d-flex flex-column align-items-center gap-3">
+    <a href="/suppliers" class="btn btn-primary btn-lg w-50">Quản lý Nhà cung cấp</a>
+    <a href="/products" class="btn btn-primary btn-lg w-50">Quản lý Sản phẩm</a>
+  </div>
+</div>
 
 <%- include("partials/footer") %>
